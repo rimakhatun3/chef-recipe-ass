@@ -3,6 +3,8 @@ import Main from "../Layout/Main";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import RecepeDetails from "../RecepeDetails/RecepeDetails";
+import Register from "../../LoginLayout/Login/Register/Register";
+import Login from "../../LoginLayout/Login/Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +21,17 @@ const router = createBrowserRouter([
                 path:'/recepeDetails/:id',
                 element:<RecepeDetails></RecepeDetails>,
                loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
-            }
+            },
+
+            {
+            path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            },
+            
         ]
         
     }

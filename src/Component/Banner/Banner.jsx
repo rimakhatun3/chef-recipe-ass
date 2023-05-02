@@ -8,7 +8,7 @@ import chef2 from '../../assets/images/chef3.avif'
 import chef3 from '../../assets/images/chef4.avif'
 const Banner = () => {
     return (
-     <div className='relative top-0 '>
+     <div className='lg:relative top-0 '>
            <div className="carousel opacity-80 w-full ">
   <div id="slide1" className="carousel-item relative w-full">
     <img src={banner1} className="w-full" />
@@ -28,25 +28,26 @@ const Banner = () => {
  
 </div>
 
-<div className='grid lg:grid-cols-12 gap-x-10 mt-20 absolute top-0 text-center'>
-<div className=' col-span-4 text-white px-5 '>
+<div className='grid lg:grid-cols-12 gap-x-10 mt-20 lg:absolute top-0 text-center'>
+<div className=' lg:col-span-4 text-white px-5 '>
 <h1 className='text-3xl font-extrabold'>this is food Recepes </h1>
 <p>other’s Recipe  Restaurant and Food HTML Template is developed specially for restaurant based service. this template has beautiful and unique design that will be best suited for your online web presence. It will be suitable for restaurant. It will also be suitable for any kind of professional cafe template.  The Mother’s Rescipe is scalable and more options & updates will be available in future based on buyers’ request. We are really glad to introduce you Mother’s Rescipe. Thanks</p>
 </div>
 
-<div className=' col-span-8'>
+<div className=' lg:col-span-8 '>
 <Swiper
-      spaceBetween={50}
+      spaceBetween={15}
+
       slidesPerView={3}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide><img src={chef1} alt="" /></SwiperSlide>
-      <SwiperSlide><img src={chef2} alt="" /></SwiperSlide>
-      <SwiperSlide><img src={chef3} alt="" /></SwiperSlide>
+      <SwiperSlide><img className='sm:w-full'  src={chef1} alt="" /></SwiperSlide>
+      <SwiperSlide><img  src={chef2} alt="" /></SwiperSlide>
+      <SwiperSlide><img  src={chef3} alt="" /></SwiperSlide>
       
-      <SwiperSlide><img src={chef2} alt="" /></SwiperSlide>
-      <SwiperSlide><img src={chef3} alt="" /></SwiperSlide>
+      <SwiperSlide><img  src={chef2} alt="" /></SwiperSlide>
+      <SwiperSlide><img  src={chef3} alt="" /></SwiperSlide>
       
      
     </Swiper>
