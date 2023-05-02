@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({singleData}) => {
-    console.log(singleData)
+    // console.log(singleData)
     const{name,image,number_of_recepe,experience,id} = singleData
     return (
         <div>

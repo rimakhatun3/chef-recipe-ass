@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import ActiveLink from '../../ActiveLink/ActiveLink';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 const Header = () => {
+
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>{
+      console.log(error)
+    })
+  }
     return (
         <div>
           <div className=" lg:px-12 navbar bg-gray-100">
@@ -19,11 +30,12 @@ const Header = () => {
             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
           </a>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+          <li><Link to='/'>Home</Link></li>
+      
+      <li><Link to='/blog'>Blog</Link></li>
           </ul>
         </li>
-        <li><a>Item 3</a></li>
+        
       </ul>
     </div>
     <a className="btn btn-ghost normal-case text-xl">Chef Recipi</a>
@@ -34,9 +46,16 @@ const Header = () => {
       
       <li><Link to='/blog'>Blog</Link></li>
     </ul>
+    
   </div>
   <div className="navbar-end">
-<FaUser className='w-24'></FaUser>
+    {user?<>
+    <button onClick={handleLogOut}>LogOut</button>
+    <img className='w-10 mx-3 rounded-full ' src={user.photoURL} alt="" />
+    </>
+    
+    :<><Link to='/login'><button >Login</button></Link></>}
+
   </div>
 </div>
         </div>

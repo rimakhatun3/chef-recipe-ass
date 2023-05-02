@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Register = () => {
-const {createUser} = useContext(AuthContext)
+const {createUser,updateUser} = useContext(AuthContext)
 const [error,setError] = useState('')
 const [sucess,setSucess] = useState('')
 const handleRegister=(event)=>{
     event.preventDefault()
+    setSucess('')
     setError('')
     const form = event.target;
     const name = form.name.value;
@@ -15,7 +16,7 @@ const handleRegister=(event)=>{
     const email= form.email.value;
     const password = form.password.value;
     const matchPassword = form.matchPassword.value;
-    console.log(name,photo,email,password,matchPassword)
+    // console.log(name,photo,email,password,matchPassword)
     form.reset()
 if(password!==matchPassword){
    return setError('please type same password')
@@ -23,14 +24,15 @@ if(password!==matchPassword){
 else if(!/(?=.*?[A-Z])/.test(password)){
     return setError('please type atleast 1 upercase')
 }
-// else if(password===8){
-//     return console.log('please type atleast 8 character')
+// else if(password < 8){
+//     return setError('please type atleast 8 character')
 // }
 createUser(email,password)
 .then(result=>{
-    const user = result.user
-    console.log(user)
-    setSucess(user)
+    const currentUser = result.user
+    console.log(currentUser)
+    setSucess(currentUser)
+    updateUser()
 })
 .catch(error=>{
     setError(error.message)
