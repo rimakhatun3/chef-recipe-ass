@@ -25,6 +25,7 @@ const Recipe = ({ recipe }) => {
         <div className="card-actions justify-end">
       <button onClick={setDisable} disabled={disable} className="btn btn-secondary">Favorite</button>
     </div>
+    
     </div>
 
 

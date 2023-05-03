@@ -2,9 +2,8 @@ import React from 'react';
 import Header from '../Shared/Header/Header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
-import banner1 from '../../assets/images/banner1.avif'
 import './main.css'
-import Banner from '../Banner/Banner';
+
 const Main = () => {
     return (
       
