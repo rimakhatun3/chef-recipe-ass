@@ -30,21 +30,20 @@ const Header = () => {
             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
           </a>
           <ul className="p-2">
-          <li><Link to='/'>Home</Link></li>
-      
-      <li><Link to='/blog'>Blog</Link></li>
+          
+      <ActiveLink to='/'>Home</ActiveLink>
+      <ActiveLink to='/blog'>Blog</ActiveLink>
           </ul>
         </li>
         
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Chef Recipi</a>
+    <a className="btn btn-ghost normal-case text-3xl font-extrabold "><span className='text-orange-400'>Chef</span> <span className='text-indigo-600 ml-2'>Recipe</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><Link to='/'>Home</Link></li>
-      
-      <li><Link to='/blog'>Blog</Link></li>
+   <li> <ActiveLink to='/'>Home</ActiveLink></li>
+      <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
     </ul>
     
   </div>
