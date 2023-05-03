@@ -63,9 +63,8 @@ const [user,setUser] = useState({})
             setUser(currentUser)
             setLodding(false)
         })
-        return ()=>{
         return unSubscribe
-        }
+    
     },[])
 
     const authInfo={

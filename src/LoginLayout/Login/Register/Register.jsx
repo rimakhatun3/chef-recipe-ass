@@ -31,7 +31,7 @@ createUser(email,password)
 .then(result=>{
     const currentUser = result.user
     console.log(currentUser)
-    setSucess(currentUser)
+    setSucess("user create sucess")
     updateUser()
 })
 .catch(error=>{
