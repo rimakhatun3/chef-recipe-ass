@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { ToastContainer,toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Recipe = ({ recipe }) => {
     const [disable, setDisable] =useState(false)
     console.log(recipe)
@@ -23,9 +25,9 @@ const Recipe = ({ recipe }) => {
     <span className='ml-2'>{rating}</span>
         </div>
         <div className="card-actions justify-end">
-      <button onClick={setDisable} disabled={disable} className="btn btn-secondary">Favorite</button>
+      <button onClick={()=>setDisable(toast('wow add faviratite'))} disabled={disable} className="btn btn-secondary">Favorite</button>
     </div>
-    
+    <ToastContainer/>
     </div>
 
 

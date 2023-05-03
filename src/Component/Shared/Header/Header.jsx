@@ -16,7 +16,7 @@ const Header = () => {
   }
     return (
         <div>
-          <div className=" lg:px-12 navbar bg-gray-100">
+          <div className=" lg:px-12 navbar mt-12 bg-gray-100">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -50,7 +50,8 @@ const Header = () => {
   <div className="navbar-end">
     {user?<>
     <button onClick={handleLogOut}>LogOut</button>
-    <img className='w-10 mx-3 rounded-full ' src={user.photoURL} alt="" />
+   <div className="tooltip" data-tip={user?.displayName}> <img className='w-10 mx-3 rounded-full ' src={user?.photoURL} alt="" /></div>
+   
     </>
     
     :<><Link to='/login'><button >Login</button></Link></>}
