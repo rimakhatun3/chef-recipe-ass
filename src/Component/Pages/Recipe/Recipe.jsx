@@ -1,6 +1,8 @@
-import React from 'react';
-import ReactStarsRating from 'react-awesome-stars-rating';
+import React, { useState } from 'react';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 const Recipe = ({ recipe }) => {
+    const [disable, setDisable] =useState(false)
     console.log(recipe)
     const {recipe_name,recipe_pic,cooking_method,ingredients,rating} = recipe
     return (
@@ -12,11 +14,16 @@ const Recipe = ({ recipe }) => {
     <p>{cooking_method}</p>
     <div>{ingredients.map(ing=><li className='text-lg font-semibold'>{ing}</li>)}</div>
     <div className='flex justify-between items-center'>
-        <div>
-        <ReactStarsRating className="w-5 flex text-yellow-600">{rating}</ReactStarsRating>
+        <div className='flex justify-center items-center'>
+        <Rating
+      style={{ maxWidth: 100 }}
+      value={Math.round(rating)}
+      readOnly
+    />
+    <span className='ml-2'>{rating}</span>
         </div>
         <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+      <button onClick={setDisable} disabled={disable} className="btn btn-secondary">Favorite</button>
     </div>
     </div>
 
