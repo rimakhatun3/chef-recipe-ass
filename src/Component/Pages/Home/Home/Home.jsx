@@ -53,7 +53,7 @@ const Home = () => {
             </div>
           <div>
             <h1 className='text-5xl font-extrabold text-center mt-14' >All Chef Information</h1>
-          <div className='grid lg:grid-cols-3 gap-5 lg:mx-16 lg:mt-11 sm:mt-96 '>
+          <div className='grid lg:grid-cols-3 gap-5 lg:mx-16 lg:mt-11  '>
            {
 data.map(singleData=><ChefCard key={singleData.id} singleData={singleData}></ChefCard>)
             }

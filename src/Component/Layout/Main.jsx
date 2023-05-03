@@ -1,27 +1,20 @@
 import React from 'react';
 import Header from '../Shared/Header/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 import './main.css'
 
 const Main = () => {
+const navigation = useNavigation()
     return (
-      
             <div>
-
-            
-   <div>
     <Header></Header>
-    
-    
-   </div>
+    <div>{navigation.state==='lodding'&&"lodding"}</div>
    <div className='min-h-[calc(100vh-250px)]'>
     <Outlet></Outlet>
    </div>
-          <div>
             <Footer></Footer>
-            </div>  
-            
+                
         </div>
     );
 };
