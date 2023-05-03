@@ -7,6 +7,7 @@ import Register from "../../LoginLayout/Login/Register/Register";
 import Login from "../../LoginLayout/Login/Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import RecepeDetails from "../Pages/RecepeDetails/RecepeDetails";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path:'/recepeDetails/:id',
                 element:<PrivateRoute><RecepeDetails></RecepeDetails></PrivateRoute>,
                loader:({params})=>fetch(`https://chef-recepe-hunter-server1.vercel.app/chef/${params.id}`)
+            },
+            {
+path:'/blog',
+element:<Blogs></Blogs>
             },
 
             {
