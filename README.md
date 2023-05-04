@@ -1,5 +1,5 @@
-*nav section
-*Banner at home page
+* nav section
+* Banner at home page
 * 6 chef data at home page
 * chef details and chef all recipe on viewdetails page
 * recipe favorite button
