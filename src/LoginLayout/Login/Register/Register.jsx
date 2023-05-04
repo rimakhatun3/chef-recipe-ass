@@ -24,9 +24,9 @@ if(password!==matchPassword){
 else if(!/(?=.*?[A-Z])/.test(password)){
     return setError('please type atleast 1 upercase')
 }
-// else if(password < 8){
-//     return setError('please type atleast 8 character')
-// }
+else if(password.length < 8){
+    return setError('please type atleast 8 character')
+}
 createUser(email,password)
 .then(result=>{
     const currentUser = result.user

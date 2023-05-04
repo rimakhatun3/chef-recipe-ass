@@ -14,7 +14,7 @@ const Home = () => {
     },[])
     return (
       <div>
-       <section className=' mb-10 bg-slate-100  '> <div  >
+       <section className=' mb-10 bg-pink-50  '> <div  >
             <div  className=' lg:mx-12'>
 <div className='grid lg:grid-cols-2 gap-x-10   text-center'>
 <div className='   px-5 mt-20 '>
@@ -43,7 +43,7 @@ const Home = () => {
   </div> 
    </div>
 </div>
-<div className='mt-12'><img src={chef3} alt="" /></div>
+<div className='my-12'><img src={chef3} alt="" /></div>
  
 </div>
 </div>
