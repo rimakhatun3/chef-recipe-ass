@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 const {loginUser,googleSingIn,gitHUbSingIn} = useContext(AuthContext)
@@ -43,7 +44,7 @@ const from = location.state?.from?.pathname || '/'
 
     return (
         <>
-             <form onSubmit={handleLogin} className="hero min-h-screen  bg-base-200">
+             <form onSubmit={handleLogin}  className="hero min-h-screen  bg-base-200">
   <div className="hero-content flex-col ">
     <div className="text-center ">
       <h1 className="text-5xl font-bold my-5">Login Now</h1>
@@ -71,10 +72,10 @@ const from = location.state?.from?.pathname || '/'
           <button className="btn btn-primary w-60">Login</button>
         </div>
         <div>
-        <button onClick={()=>googleSingIn()} className="btn btn-secondary w-60">Login With Goggle</button> 
+        <button onClick={()=>googleSingIn()} className="btn btn-secondary w-60"><FaGoogle className='mr-2'></FaGoogle> Login With Goggle</button> 
         </div>
         <div>
-        <button onClick={()=>gitHUbSingIn()} className="btn btn-warning w-60">Login With GitHub</button> 
+        <button onClick={()=>gitHUbSingIn()} className="btn btn-warning w-60"><FaGithub className='mr-2'/> Login With GitHub</button> 
         </div>
       </div>
     </div>

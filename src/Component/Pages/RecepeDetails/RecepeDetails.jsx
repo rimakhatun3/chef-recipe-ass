@@ -20,8 +20,8 @@ const RecepeDetails = () => {
                     <h1 className='text-4xl text-center font-bold'>All Recipe Details</h1>
                    {
                     <div className="card card-side bg-base-100 shadow-xl mt-16">
-<LazyLoad><figure><img  src={datas.image} alt="Movie"/></figure></LazyLoad>                    
-                    <div className="card-body">
+<div className='w-full'><LazyLoad><figure><img   src={datas.image} alt="Movie"/></figure></LazyLoad> </div>                   
+                    <div className="card-body w-full">
                       <h2 className="card-title">{datas.name}</h2>
                       <p> <span className=' font-bold text-orange-500'>Experience</span>: {datas.experience}</p>
     <p> <span className=' font-bold text-orange-500'>Number of Recipe</span>: {datas.number_of_recepe}</p>

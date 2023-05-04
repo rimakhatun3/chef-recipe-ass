@@ -12,6 +12,8 @@ const ChefCard = ({singleData}) => {
   </figure>
   <div className="card-body items-start ">
    <p><span className=' font-bold text-orange-500'>Name</span>:{name}</p>
+    <p> <span className=' font-bold text-orange-500'>Experience</span>: {experience}</p>
+    <p> <span className=' font-bold text-orange-500'>Number of Recipe</span>: {number_of_recepe}</p>
     
 
    <div className='flex items-center gap-x-44'>
