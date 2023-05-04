@@ -17,7 +17,7 @@ const Recipe = ({ recipe }) => {
   <div className="card-body">
     <h2 className="card-title">{recipe_name}</h2>
     <p>{cooking_method}</p>
-    <div>{ingredients.map(ing=><li className='text-lg font-semibold'>{ing}</li>)}</div>
+    <div>Indigredien:{ingredients.map(ing=><li className='text-lg font-semibold'>{ing}</li>)}</div>
     <div className='flex justify-between items-center'>
         
         <div className="card-actions justify-center">
