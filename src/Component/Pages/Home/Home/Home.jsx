@@ -2,13 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 import './home.css'
 
-import 'swiper/css';
-import chef1 from '../../../../assets/images/bg5.jpeg'
-import chef2 from '../../../../assets/images/chefimg1.avif'
+
 import chef3 from '../../../../assets/images/chef3.avif'
-import LazyLoad from 'react-lazy-load';
-
-
 const Home = () => {
     const [data,setData] = useState([])
 
@@ -19,7 +14,7 @@ const Home = () => {
     },[])
     return (
       <div>
-        <div  className=' bg-slate-100  mb-12 '>
+       <section className=' mb-10 bg-slate-100  '> <div  >
             <div  className=' lg:mx-12'>
 <div className='grid lg:grid-cols-2 gap-x-10   text-center'>
 <div className='   px-5 mt-20 '>
@@ -48,19 +43,19 @@ const Home = () => {
   </div> 
    </div>
 </div>
-<div><img src={chef3} alt="" /></div>
+<div className='mt-12'><img src={chef3} alt="" /></div>
  
 </div>
 </div>
-            </div>
-          <div >
-            <h1 className='text-5xl font-extrabold text-center mt-12' >All Chef Information</h1>
+            </div></section>
+          <section className='mt-10 sm:mb-32 '><div >
+            <h1 className='text-5xl my-8 font-extrabold text-center ' >All Chef Information</h1>
           <div className='grid lg:grid-cols-3 gap-5 lg:mx-16 lg:mt-11  '>
            {
 data.map(singleData=><ChefCard key={singleData.id} singleData={singleData}></ChefCard>)
             }
            </div>
-          </div>
+          </div></section>
           
           
         </div>
