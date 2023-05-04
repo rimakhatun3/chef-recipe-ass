@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import Recipe from '../Recipe/Recipe';
 import { FaThumbsUp } from "react-icons/fa";
+import LazyLoad from 'react-lazy-load';
 const RecepeDetails = () => {
     
     const datas = useLoaderData()
@@ -19,8 +20,7 @@ const RecepeDetails = () => {
                     <h1 className='text-4xl text-center font-bold'>All Recipe Details</h1>
                    {
                     <div className="card card-side bg-base-100 shadow-xl mt-16">
-                    <figure><img  src={datas.image} alt="Movie"/></figure>
-                    
+<LazyLoad><figure><img  src={datas.image} alt="Movie"/></figure></LazyLoad>                    
                     <div className="card-body">
                       <h2 className="card-title">{datas.name}</h2>
                       <p> <span className=' font-bold text-orange-500'>Experience</span>: {datas.experience}</p>
